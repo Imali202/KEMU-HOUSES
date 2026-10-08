@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nyumba — student housing near KeMU, Meru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Find a place to live near KeMU, without the walking around.</h1>
+    <p class="lede">Rooms, bedsitters and apartments posted directly by landlords and agents around Meru — searchable by price and distance from campus.</p>
+
+    <form class="search-panel" id="search-form">
+      <div>
+        <label for="q">Search</label>
+        <input type="text" id="q" placeholder="e.g. Nyaki, single room">
+      </div>
+      <div>
+        <label for="max-price">Max price (KES)</label>
+        <input type="number" id="max-price" placeholder="10000" min="0">
+      </div>
+      <div>
+        <label for="bedrooms">Type</label>
+        <select id="bedrooms">
+          <option value="">Any</option>
+          <option value="bedsitter">Bedsitter</option>
+          <option value="single">Single room</option>
+          <option value="1bdrm">1 bedroom</option>
+          <option value="2bdrm">2 bedroom</option>
+          <option value="hostel">Hostel</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+</header>
+
+<section class="listings-section">
+  <div class="wrap">
+    <div class="listings-head">
+      <h2>Available now</h2>
+      <span class="result-count" id="result-count"></span>
+    </div>
+    <div class="listings-grid" id="listings-grid">
+      <!-- listing cards injected here -->
+    </div>
+  </div>
+</section>
+
+<footer>Nyumba — built by a KeMU student, for KeMU students.</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

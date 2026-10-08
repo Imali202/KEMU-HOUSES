@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My listings — Nyumba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav"></nav>
+
+<header class="dash-header">
+  <div class="wrap">
+    <h1>My listings</h1>
+    <p id="welcome-line" style="color:var(--ink-soft)">…</p>
+  </div>
+</header>
+
+<div class="dash-body wrap">
+
+  <div id="signed-out-notice" style="display:none">
+    <p>You need to be logged in as a landlord to see this page.</p>
+    <a href="login.html" class="btn btn-primary">Log in</a>
+  </div>
+
+  <div id="dash-content" style="display:none">
+
+    <details id="post-form-details" style="margin-bottom:32px">
+      <summary class="btn btn-dark" style="display:inline-block;cursor:pointer">+ Post a new listing</summary>
+      <div style="border:1px solid var(--line); border-radius:4px; padding:24px; margin-top:16px; background:var(--white); max-width:560px">
+        <div class="form-msg" id="post-msg"></div>
+        <form id="listing-form">
+          <input type="hidden" id="edit-id" value="">
+          <div class="field">
+            <label for="title">Title</label>
+            <input type="text" id="title" required placeholder="e.g. Spacious single room, Nyaki">
+          </div>
+          <div class="field">
+            <label for="price">Price per month (KES)</label>
+            <input type="number" id="price" required min="0">
+          </div>
+          <div class="field">
+            <label for="type">Type</label>
+            <select id="type" required>
+              <option value="bedsitter">Bedsitter</option>
+              <option value="single">Single room</option>
+              <option value="1bdrm">1 bedroom</option>
+              <option value="2bdrm">2 bedroom</option>
+              <option value="hostel">Hostel</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="location">Location / area</label>
+            <input type="text" id="location" required placeholder="e.g. Nyaki, Meru">
+          </div>
+          <div class="field">
+            <label for="distance">Distance from KeMU (optional)</label>
+            <input type="text" id="distance" placeholder="e.g. 5 min walk">
+          </div>
+          <div class="field">
+            <label for="description">Description</label>
+            <textarea id="description" placeholder="Water, electricity, security, what's nearby…"></textarea>
+          </div>
+          <div class="field">
+            <label for="images">Photo links (optional)</label>
+            <input type="text" id="images" placeholder="Paste one or more image URLs, comma-separated">
+            <div class="hint">Upload photos to a free host (e.g. imgur.com) and paste the links here — one per photo, separated by commas.</div>
+          </div>
+          <div class="field">
+            <label for="contactPhone">Contact phone (for calls / WhatsApp)</label>
+            <input type="tel" id="contactPhone" required placeholder="07xx xxx xxx">
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit-btn">Post listing</button>
+        </form>
+      </div>
+    </details>
+
+    <div class="dash-toolbar">
+      <h2 style="font-family:var(--font-display); margin:0">Your posted listings</h2>
+    </div>
+    <div id="my-listings"></div>
+
+  </div>
+</div>
+
+<footer>Nyumba — built by a KeMU student, for KeMU students.</footer>
+
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
